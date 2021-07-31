@@ -1,10 +1,10 @@
-import React, { Fragment, useState, useEffect } from 'react'
-
-import MetaData from '../layout/MetaData'
-
+import React, { Fragment, useEffect, useState } from 'react'
 import { useAlert } from 'react-alert'
 import { useDispatch, useSelector } from 'react-redux'
-import { register, clearErrors } from '../../actions/userActions'
+import { clearErrors, register } from '../../actions/userActions'
+import MetaData from '../layout/MetaData'
+
+
 
 const Register = ({ history }) => {
 
@@ -118,7 +118,7 @@ const Register = ({ history }) => {
                             <label htmlFor='avatar_upload'>Avatar</label>
                             <div className='d-flex align-items-center'>
                                 <div>
-                                    <figure className='avatar mr-3 item-rtl'>
+                                    <figure className='avatar me-3 item-rtl'>
                                         <img
                                             src={avatarPreview}
                                             className='rounded-circle'
@@ -132,12 +132,12 @@ const Register = ({ history }) => {
                                         name='avatar'
                                         className='custom-file-input'
                                         id='customFile'
-                                        accept="iamges/*"
+                                        accept="imges/*"
                                         onChange={onChange}
                                     />
-                                    <label className='custom-file-label' htmlFor='customFile'>
+                                    {/* <label className='custom-file-label' htmlFor='customFile'>
                                         Choose Avatar
-                                    </label>
+                                    </label> */}
                                 </div>
                             </div>
                         </div>
@@ -145,7 +145,7 @@ const Register = ({ history }) => {
                         <button
                             id="register_button"
                             type="submit"
-                            className="btn btn-block py-3"
+                            className="btn"
                             disabled={loading ? true : false}
                         >
                             REGISTER

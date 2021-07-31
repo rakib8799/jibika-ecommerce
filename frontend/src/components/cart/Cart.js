@@ -60,7 +60,7 @@ const Cart = ({ history }) => {
                                             </div>
 
                                             <div className="col-5 col-lg-3">
-                                                <Link to={`/products/${item.product}`}>{item.name}</Link>
+                                                <Link to={`/product/${item.product}`} className='text-decoration-none'>{item.name}</Link>
                                             </div>
 
 

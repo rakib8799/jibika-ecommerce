@@ -10,16 +10,18 @@ const Sidebar = () => {
                         <Link to="/dashboard"><i className="fa fa-tachometer"></i> Dashboard</Link>
                     </li>
 
-                    <li>
-                        <a href="#productSubmenu" data-toggle="collapse" aria-expanded="false" className="dropdown-toggle"><i
-                            className="fa fa-product-hunt"></i> Products</a>
-                        <ul className="collapse list-unstyled" id="productSubmenu">
+                    <li className='dropdown'>
+                        <a class="btn btn-secondary dropdown-toggle" href="#productSubmenu" role="button" id="productSubmenu" className="dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i className="fa fa-product-hunt"></i> 
+                            Products
+                        </a>
+                        <ul className="dropdown-menu bg-dark" aria-labelledby="productSubmenu">
                             <li>
-                                <Link to="/admin/products"><i className="fa fa-clipboard"></i> All</Link>
+                                <Link to="/admin/products" className="dropdown-item"><i className="fa fa-clipboard"></i> All</Link>
                             </li>
 
                             <li>
-                                <Link to="/admin/product"><i className="fa fa-plus"></i> Create</Link>
+                                <Link to="/admin/product" className="dropdown-item"><i className="fa fa-plus"></i> Create</Link>
                             </li>
                         </ul>
                     </li>

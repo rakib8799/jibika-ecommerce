@@ -72,15 +72,17 @@ const Login = ({ history, location }) => {
 
                                 <Link to="/password/forgot" className="float-right mb-4">Forgot Password?</Link>
 
-                                <button
+                               <div className='d-flex justify-content-between'>
+                               <button
                                     id="login_button"
                                     type="submit"
-                                    className="btn btn-block py-3"
+                                    className="btn"
                                 >
                                     LOGIN
                                 </button>
 
-                                <Link to="/register" className="float-right mt-3">New User?</Link>
+                                <Link to="/register" className="mt-3">New User?</Link>
+                               </div>
                             </form>
                         </div>
                     </div>

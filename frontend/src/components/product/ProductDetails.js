@@ -1,15 +1,16 @@
-import React, { Fragment, useState, useEffect } from 'react'
-import { Carousel } from 'react-bootstrap'
+import React, { Fragment, useEffect, useState } from 'react';
+import { useAlert } from 'react-alert';
+import { useDispatch, useSelector } from 'react-redux';
+import { Carousel } from 'react-responsive-carousel';
+import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
+import { addItemToCart } from '../../actions/cartActions';
+import { clearErrors, getProductDetails, newReview } from '../../actions/productActions';
+import { NEW_REVIEW_RESET } from '../../constants/productConstants';
+import Loader from '../layout/Loader';
+import MetaData from '../layout/MetaData';
+import ListReviews from '../review/ListReviews';
 
-import Loader from '../layout/Loader'
-import MetaData from '../layout/MetaData'
-import ListReviews from '../review/ListReviews'
 
-import { useAlert } from 'react-alert'
-import { useDispatch, useSelector } from 'react-redux'
-import { getProductDetails, newReview, clearErrors } from '../../actions/productActions'
-import { addItemToCart } from '../../actions/cartActions'
-import { NEW_REVIEW_RESET } from '../../constants/productConstants'
 
 const ProductDetails = ({ match }) => {
 
@@ -124,11 +125,11 @@ const ProductDetails = ({ match }) => {
                     <MetaData title={product.name} />
                     <div className="row d-flex justify-content-around">
                         <div className="col-12 col-lg-5 img-fluid" id="product_image">
-                            <Carousel pause='hover'>
+                            <Carousel autoPlay='true'>
                                 {product.images && product.images.map(image => (
-                                    <Carousel.Item key={image.public_id}>
+                                    <div key={image.public_id}>
                                         <img className="d-block w-100" src={image.url} alt={product.title} />
-                                    </Carousel.Item>
+                                    </div>
                                 ))}
                             </Carousel>
                         </div>
